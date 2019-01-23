@@ -1,8 +1,8 @@
-<h1 align=center><%= $game.player_one.name %> vs <%= $game.player_two.name %></h1> <br>
-<h2 align=left><%= $game.turn.name %>'s turn </h2>
+<h1 align=center><%= @game.player_one.name %> vs <%= @game.player_two.name %></h1> <br>
+<h2 align=left><%= @game.turn.name %>'s turn </h2>
 
-<p align=left><%= $game.turn.name %> has <%=$game.turn.hit_points%>/60 HP</p> <br>
-<p align=right><%= $game.opponent.name %> has <%=$game.opponent.hit_points%>/60 HP</p> <br>
+<p align=left><%= @game.turn.name %> has <%=@game.turn.hit_points%>/60 HP</p> <br>
+<p align=right><%= @game.opponent.name %> has <%=@game.opponent.hit_points%>/60 HP</p> <br>
 
 <form action='/attack'>
   <input type='submit' value='Attack!' >

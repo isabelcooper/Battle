@@ -1,6 +1,14 @@
 class Game
 
-  attr_reader :player_one, :player_two, :turn
+  attr_reader :turn
+
+  def self.create(player_one, player_two)
+    @game = Game.new(player_one, player_two)
+  end
+
+  def self.the_game
+    @game
+  end
 
   def initialize(player_one, player_two)
     @players = [player_one, player_two]
