@@ -1,3 +1,5 @@
+# Player 1 = Tom
+# Player 2 = Isabel
 
 
 feature 'Set up game' do
@@ -21,7 +23,22 @@ feature 'Attack' do
   scenario 'attack player 2 and decrease hit_points' do
     sign_in_and_play
     click_button 'Attack!'
-    expect(page).to have_content ("Isabel has 50/60 HP")
+    expect(page).to have_content ("Isabel now has 50/60 HP")
+  end
+
+  scenario 'switch turn after attack' do
+    sign_in_and_play
+    click_button 'Attack!'
+    expect(page)
+  end
+
+  feature 'Ok...' do
+    scenario 'switch turns' do
+      sign_in_and_play
+      click_button 'Attack!'
+      click_button 'Ok...'
+      expect(page).to have_content ("Isabel's turn")
+    end
   end
 
 end

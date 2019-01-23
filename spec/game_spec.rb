@@ -21,4 +21,24 @@ describe Game do
     subject.attack(player_two)
     end
   end
+
+  describe '#turn' do
+    it 'returns turn' do
+      expect(subject.turn).to eq player_one
+    end
+
+    it 'switches turn' do
+      subject.switch_turn
+      expect(subject.turn).to eq player_two
+    end
+
+    it 'returns the player whose turn it is not' do
+      expect(subject.opponent).to eq player_two
+    end
+
+    it 'returns the player whose turn its not, after switching turns' do
+      subject.switch_turn
+      expect(subject.opponent).to eq player_one
+    end
+  end
 end
