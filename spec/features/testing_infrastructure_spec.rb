@@ -1,7 +1,6 @@
 # Player 1 = Tom
 # Player 2 = Isabel
 
-
 feature 'Set up game' do
   scenario 'fill form with names' do
     sign_in_and_play
@@ -31,6 +30,7 @@ feature 'Attack' do
     click_button 'Attack!'
     expect(page)
   end
+end
 
   feature 'Ok...' do
     scenario 'switch turns' do
@@ -41,6 +41,13 @@ feature 'Attack' do
     end
   end
 
+  feature 'Game Over' do
+    scenario 'Player 1 wins' do
+      sign_in_and_play
+      11.times { attack_and_ok }
+      save_and_open_page
+      expect(page).to have_content ("Game Over")
+  end
 end
 
 
