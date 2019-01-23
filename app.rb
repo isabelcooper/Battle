@@ -28,7 +28,7 @@ class Battle < Sinatra::Base
   end
 
   post '/switch_turn' do
-    if $game.opponent.hit_points == 0
+    if $game.game_over?
       redirect '/game-over'
     else
       $game.switch_turn

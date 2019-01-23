@@ -1,9 +1,12 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(player_one, player_two) }
-  let(:player_one) { double(:player, receive_damage: nil ) }
-  let(:player_two) { double(:player, receive_damage: nil ) }
+  let(:subject) { described_class.new(player_one, player_two) }
+  let(:player_one) { double(:player, hit_points: 10, receive_damage: nil ) }
+  let(:player_two) { double(:player, hit_points: 10, receive_damage: nil ) }
+  let(:dead_player) { double(:player, hit_points: 0 ) }
+  let(:game2) { described_class.new(player_one, dead_player) }
+
 
 
   describe '#players' do
@@ -39,6 +42,15 @@ describe Game do
     it 'returns the player whose turn its not, after switching turns' do
       subject.switch_turn
       expect(subject.opponent).to eq player_one
+    end
+  end
+
+  describe '#game-over' do
+    it 'should return true if either player has 0 points' do
+      expect(game2.game_over?).to eq true
+    end
+    it 'should return false if neither player has 0 points' do
+      expect(subject.game_over?).to eq false
     end
   end
 end

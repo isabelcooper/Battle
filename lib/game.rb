@@ -26,4 +26,9 @@ class Game
   def opponent
     @players.select {|player| player != @turn }.shift
   end
+
+  def game_over?
+    (player_one.hit_points == 0 || player_two.hit_points == 0 ) ? true : false
+  end
+
 end

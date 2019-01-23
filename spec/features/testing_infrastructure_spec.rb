@@ -45,7 +45,6 @@ end
     scenario 'Player 1 wins' do
       sign_in_and_play
       11.times { attack_and_ok }
-      save_and_open_page
       expect(page).to have_content ("Game Over")
   end
 end
