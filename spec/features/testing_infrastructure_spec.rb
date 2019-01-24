@@ -51,13 +51,20 @@ end
 end
 
 feature 'Computer opponent' do
+
+  scenario 'when single-player selected, 2nd player initializes as Computer' do
+      visit '/'
+      select 'computer', from: 'game_type'
+      fill_in 'player_one', with: 'Tom'
+      click_button 'Submit'
+      expect(page).to have_content("Computer")
+  end
+
   scenario 'show output of computer turn' do
     sign_in_and_play_computer
     attack_and_ok
     expect(page).to have_content ("Computer attacks")
   end
 end
-
-
 
     # save_and_open_page

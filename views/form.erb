@@ -3,32 +3,42 @@
 <head>
   <style>
     body, input, select {
-      background-color: #c59e3f;
+      background-color: #9deff9;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 18px
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      text-align: center
     }
     input, select {
-      width: 100px;
+      width: 300px;
       height: 25px;
-      -webkit-border-radius: 8px
+      background-color: #fff;
+      -webkit-border-radius: 8px;
+      border-bottom: 1px solid
+    }
+    h1 {
+      margin-top: 30px
     }
     </style>
     </head>
  <body>
     <div>
+      <h1>Battle</h1>
       <form action = "/names" method=post>
-        <select>
+        Mode: <br>
+        <select name="game_type">
           <option value= "computer">Battle computer</option>
           <option value= "2player">2 player</option>
-        </select>
+        </select> <br>
         <label for= 'player_one'>
-          Player One
-        <input type='text', name='player_one' >
-        </label>
+          Player One <br>
+        <input type='text', name='player_one', required >
+        </label><br>
         <label for= "player_two">
-          Player Two
-        <input type='text', name='player_two' >
-        </label>
+          Player Two <br>
+        <input type='text', name='player_two', value = "Computer" >
+        </label><br>
         <input type='submit', value='Submit' >
       </form>
     </div>
