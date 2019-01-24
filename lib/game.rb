@@ -36,7 +36,7 @@ class Game
   end
 
   def game_over?
-    (player_one.hit_points == 0 || player_two.hit_points == 0 ) ? true : false
+    opponent.hit_points == 0
   end
 
 end
