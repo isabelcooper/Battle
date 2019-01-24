@@ -1,11 +1,36 @@
-<form action = "/names" method=post>
-  <label for= 'player_one'>
-    Player One
-  <input type='text', name='player_one' >
-  </label>
-  <label for= "player_two">
-    Player Two
-  <input type='text', name='player_two' >
-  </label>
-  <input type='submit', value='Submit' >
-  </form>
+<!DOCTYPE= html>
+<html>
+<head>
+  <style>
+    body, input, select {
+      background-color: #c59e3f;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px
+    }
+    input, select {
+      width: 100px;
+      height: 25px;
+      -webkit-border-radius: 8px
+    }
+    </style>
+    </head>
+ <body>
+    <div>
+      <form action = "/names" method=post>
+        <select>
+          <option value= "computer">Battle computer</option>
+          <option value= "2player">2 player</option>
+        </select>
+        <label for= 'player_one'>
+          Player One
+        <input type='text', name='player_one' >
+        </label>
+        <label for= "player_two">
+          Player Two
+        <input type='text', name='player_two' >
+        </label>
+        <input type='submit', value='Submit' >
+      </form>
+    </div>
+  </body>
+</html>

@@ -50,7 +50,13 @@ end
   end
 end
 
-
+feature 'Computer opponent' do
+  scenario 'show output of computer turn' do
+    sign_in_and_play_computer
+    attack_and_ok
+    expect(page).to have_content ("Computer attacks")
+  end
+end
 
 
 

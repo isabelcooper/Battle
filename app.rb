@@ -30,7 +30,16 @@ class Battle < Sinatra::Base
   end
 
   post '/switch_turn' do
-    @game.game_over? ? (redirect '/game-over') : (@game.switch_turn; redirect '/plays')
+    if @game.game_over?
+      redirect '/game-over'
+    else
+      @game.switch_turn
+      @game.turn.name == "Computer" ? (redirect '/computer_turn') : (redirect '/plays')
+    end
+  end
+
+  get '/computer_turn' do
+    redirect '/attack'
   end
 
   get '/game-over' do
