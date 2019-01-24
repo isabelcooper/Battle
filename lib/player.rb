@@ -9,7 +9,14 @@ class Player
   end
 
   def receive_damage
-    @hit_points -= DEFAULT_ATTACK_VALUE
+    @hit_points -= random_damage || DEFAULT_ATTACK_VALUE
   end
+
+
+  def random_damage
+    rand(1..30)
+  end
+
+
 
 end

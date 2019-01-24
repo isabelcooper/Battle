@@ -21,8 +21,9 @@ feature 'Attack' do
 
   scenario 'attack player 2 and decrease hit_points' do
     sign_in_and_play
+    srand(2)
     click_button 'Attack!'
-    expect(page).to have_content ("Isabel now has 50/60 HP")
+    expect(page).to have_content ("Isabel now has 51/60 HP")
   end
 
   scenario 'switch turn after attack' do
@@ -44,7 +45,7 @@ end
   feature 'Game Over' do
     scenario 'Player 1 wins' do
       sign_in_and_play
-      11.times { attack_and_ok }
+      13.times { attack_and_ok }
       expect(page).to have_content ("Game Over")
   end
 end

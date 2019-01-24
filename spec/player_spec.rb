@@ -18,8 +18,14 @@ describe Player do
   end
 
   describe '#receive_damage' do
-    it "Reduces hit points by #{Player::DEFAULT_ATTACK_VALUE}" do
-      expect {paul.receive_damage}.to change{paul.hit_points}.by(-Player::DEFAULT_ATTACK_VALUE)
+    it "Reduces hit points by random_damage" do
+      srand(2)
+      expect {paul.receive_damage}.to change{paul.hit_points}.by(-9)
+    end
+
+    it 'calculates random damage' do
+      srand(2)
+      expect(paul.random_damage).to eq 9
     end
   end
 

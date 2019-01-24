@@ -36,7 +36,7 @@ class Game
   end
 
   def game_over?
-    opponent.hit_points == 0
+    opponent.hit_points <= 0
   end
 
 end
